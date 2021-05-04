@@ -8,19 +8,19 @@
 import UIKit
 import SDWebImage
 
-class SeriesViewController: UITableViewController {
+class MovieViewController: UITableViewController {
 
-    var seriesManager = MovieManager<SeriesResult>()
-    var seriesResult: SeriesResult?
+    var movieManager = MovieManager<MovieResult>()
+    var movieResult: MovieResult?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
-        seriesManager.delegate = self
+        movieManager.delegate = self
         
-        seriesManager.getSeries()
+        movieManager.getSeries()
     }
     
     // MARK: - Table view data source
@@ -30,7 +30,7 @@ class SeriesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seriesResult?.results.count ?? 0
+        return movieResult?.results.count ?? 0
     }
 
     
@@ -40,9 +40,9 @@ class SeriesViewController: UITableViewController {
         
         
 
-        cell.textLabel?.text = seriesResult?.results[indexPath.row].name
+        cell.textLabel?.text = movieResult?.results[indexPath.row].originalTitle
         
-        var imgPath = "https://www.themoviedb.org/t/p/w440_and_h660_face/\(seriesResult?.results[indexPath.row].backdropPath ?? "")"
+        var imgPath = "https://www.themoviedb.org/t/p/w440_and_h660_face/\(movieResult?.results[indexPath.row].backdropPath ?? "")"
         
         cell.imageView?.sd_setImage(with: URL(string: imgPath), placeholderImage: UIImage(systemName: "questionmark"))
 
@@ -51,9 +51,9 @@ class SeriesViewController: UITableViewController {
     
 }
 
-extension SeriesViewController: MovieDelegate {
+extension MovieViewController: MovieDelegate {
     func updateList<T>(result: T) {
-        self.seriesResult = result as! SeriesResult
+        self.movieResult = result as! MovieResult
         tableView.reloadData()
     }
 }

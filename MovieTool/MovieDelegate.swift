@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MovieDelegate {
-    func updateList<T>(seriesResult: T)
+    func updateList<T>(result: T)
 }

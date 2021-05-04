@@ -8,11 +8,17 @@
 import Foundation
 import Alamofire
 
-class SeriesManager<T:Codable> {
+class MovieManager<T:Codable> {
     var delegate: MovieDelegate?
     
     func getUrl() -> String {
-        return K.SeriesUrl.replacingOccurrences(of: "{apiKey}", with: K.ApiKey)
+        var baseUrl = ""
+        if T.self == MovieResult.self {
+            baseUrl = K.MoviesUrl
+        } else {
+            baseUrl = K.SeriesUrl
+        }
+        return baseUrl.replacingOccurrences(of: "{apiKey}", with: K.ApiKey)
     }
     
     func getSeries()
@@ -26,7 +32,7 @@ class SeriesManager<T:Codable> {
                   case .success(let model):
                     
                     let result = model as! T
-                    self.delegate?.updateList(seriesResult: result)
+                    self.delegate?.updateList(result: result)
                     
                 case .failure(_): break
               }

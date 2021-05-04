@@ -26,7 +26,7 @@ class SeriesManager<T:Codable> {
                   case .success(let model):
                     
                     let result = model as! T
-                    self.delegate?.updateList(seriesResult: result as! SeriesResult)
+                    self.delegate?.updateList(seriesResult: result)
                     
                 case .failure(_): break
               }

@@ -52,10 +52,8 @@ class SeriesViewController: UITableViewController {
 }
 
 extension SeriesViewController: MovieDelegate {
-    
-    func updateList(seriesResult: SeriesResult) {
-        self.seriesResult = seriesResult
+    func updateList<T>(seriesResult: T) {
+        self.seriesResult = seriesResult as! SeriesResult
         tableView.reloadData()
     }
-    
 }

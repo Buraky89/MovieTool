@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class SeriesManager {
+class SeriesManager<T:Codable> {
     var delegate: MovieDelegate?
     
     func getUrl() -> String {
@@ -19,14 +19,14 @@ class SeriesManager {
     {
 
         
-        NetworkManager.instance.fetch(HTTPMethod.get, url: getUrl(), requestModel: nil, model: SeriesResult.self) { response in
+        NetworkManager.instance.fetch(HTTPMethod.get, url: getUrl(), requestModel: nil, model: T.self) { response in
               
               switch(response)
               {
                   case .success(let model):
                     
-                    let result = model as! SeriesResult
-                    self.delegate?.updateList(seriesResult: result)
+                    let result = model as! T
+                    self.delegate?.updateList(seriesResult: result as! SeriesResult)
                     
                 case .failure(_): break
               }

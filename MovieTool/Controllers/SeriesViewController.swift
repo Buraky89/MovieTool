@@ -10,7 +10,7 @@ import SDWebImage
 
 class SeriesViewController: UITableViewController {
 
-    var seriesManager = SeriesManager()
+    var seriesManager = SeriesManager<SeriesResult>()
     var seriesResult: SeriesResult?
     
     override func viewDidLoad() {

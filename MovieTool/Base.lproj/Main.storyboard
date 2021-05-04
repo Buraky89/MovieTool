@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Dizi-->
         <scene sceneID="DtL-jA-LVp">
             <objects>
                 <tableViewController id="dqk-Wc-Chx" customClass="SeriesViewController" customModule="MovieTool" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,13 +30,13 @@
                             <outlet property="delegate" destination="dqk-Wc-Chx" id="kns-7j-aYE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="dKd-fU-5GA"/>
+                    <tabBarItem key="tabBarItem" title="Dizi" id="dKd-fU-5GA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlB-mF-L6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968.11594202898561" y="110.49107142857143"/>
         </scene>
-        <!--Item-->
+        <!--Film-->
         <scene sceneID="xpe-nr-Knx">
             <objects>
                 <tableViewController id="r35-tj-JPf" customClass="MovieViewController" customModule="MovieTool" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="r35-tj-JPf" id="6Tl-nu-njb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Qjc-U5-pL4"/>
+                    <tabBarItem key="tabBarItem" title="Film" id="Qjc-U5-pL4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qY0-rc-J5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

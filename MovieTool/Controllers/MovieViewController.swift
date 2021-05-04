@@ -20,7 +20,7 @@ class MovieViewController: UITableViewController {
         
         movieManager.delegate = self
         
-        movieManager.getSeries()
+        movieManager.getAll()
     }
     
     // MARK: - Table view data source

@@ -20,7 +20,7 @@ class SeriesViewController: UITableViewController {
         
         seriesManager.delegate = self
         
-        seriesManager.getSeries()
+        seriesManager.getAll()
     }
     
     // MARK: - Table view data source

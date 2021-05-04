@@ -21,7 +21,7 @@ class MovieManager<T:Codable> {
         return baseUrl.replacingOccurrences(of: "{apiKey}", with: K.ApiKey)
     }
     
-    func getSeries()
+    func getAll()
     {
 
         
